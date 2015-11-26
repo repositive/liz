@@ -520,20 +520,20 @@ footer.platform{
 // }
 // // end of temp landing page
 //
-// /* responsive layout */
-//
-// @media only screen and (min-width: 993px) and (max-width: 1024px) {
-//     .container {
-//         width: 80%;
-//     }
-// }
-// @media only screen and (max-width: 960px) {
-//     .main-container {
-//         width: 100%;
-//     }
-// }
-// @media only screen and (max-width: 600px) {
-//     .col.s12 {
-//         margin-top: 1rem;
-//     }
-// }
+/* responsive layout */
+
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+    .container {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .main-container {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .col.s12 {
+        margin-top: 1rem;
+    }
+}
