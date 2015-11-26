@@ -1,0 +1,260 @@
+//All navbar related elements go here.
+// Taken from repositive.io static
+nav{
+    height: 50px;
+    line-height: 50px;
+    padding-left:1em;
+    padding-right:1em;
+    overflow: visible;
+    ul li {
+      list-style-type: none;
+      display: inline;
+    }
+    a {
+      text-decoration: none;
+      color: grey !important;
+      font-family: "Varela Round", "roboto", sans-serif;
+      font-weight: bold;
+    }
+    a.dropdown-button {
+        padding: 0;
+    }
+    .dropdown-content li{
+      line-height:0.8em;
+
+    }
+    a.button-collapse {
+        position: absolute;
+        top: 0;
+        i {
+            font-size: 2rem;
+            line-height: 50px;
+        }
+    }
+    .side-nav li {
+        border-bottom: 1px solid $border-grey;
+        background-color: white;
+    }
+}
+.platform .divider{
+  margin:0 !important;
+}
+.navbar-fixed{
+    position:fixed;
+    top:0;
+    width:100%;
+}
+
+.nav-logo{
+    width: 125px;
+    padding-top: 0.3em;
+    position:absolute;
+}
+.nav-logo-square{
+  width: 20px;
+  position: relative;
+}
+.brand-name{
+    position:absolute;
+    left:3%;
+}
+nav a.active{
+    h6 span {
+        border: none;
+    }
+    span{
+        border-bottom:2px solid $primary-red;
+        line-height:1.5;
+        width:3px;
+    }
+}
+.nav-button{
+    margin-left:1em;
+    a{
+        margin-bottom:0;
+    }
+    &:hover{
+        background-color: #f5f5f5;
+    }
+}
+//NAVBAR PLATFORM
+//search input field
+.nav-input {
+  position: absolute;
+  left: 15%;
+  min-width: 37%;
+  height: 100%;
+  border-left: 1px solid $border-grey;
+  form {
+    display: inline-block;
+    width: 90%;
+    .input-field{
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      input{
+        background-color: $navbar-grey;
+        font-size: 1em;
+        float: left;
+        border: none;
+        padding: 0 !important;
+        width: 80%;
+        height: 50px !important;
+        &:focus::-webkit-input-placeholder {
+          color: transparent;
+        }
+      }
+    }
+  }
+  i {
+    display: inline-block;
+  }
+  button {
+    position: absolute;
+    height: 35px;
+    background: $unfocus-grey;
+    color: white;
+    border-radius: 0;
+    h6 {
+        font-size: 0.8em;
+    }
+  }
+}
+
+// register and request dataset button
+nav .nav-wrapper {
+    i {
+        font-size: 1.3em;
+        padding: 0 0.3em 0 0.3em;
+        height: 50px;
+        line-height: 50px;
+        float: left;
+        color: $sub-text;
+    }
+    .re-navbar-btn {
+    position: absolute;
+    border-left: 1px solid $border-grey;
+        h6 {
+            font-size: 0.8em;
+        }
+    }
+    .register {
+        right: 30%;
+    }
+    .request {
+        right: 16%;
+    }
+}
+
+//notification icon
+.notification-account {
+    display: inline-block;
+    .notification-icon {
+        display: inline-block;
+    }
+    .user-avatar {
+        display: inline-block;
+    }
+}
+
+
+//secondary navbar on settings page
+nav.secondNavbar {
+    font-size: 0.8em;
+    height: auto;
+    padding: 0 !important;
+    li {
+        width: 100%;
+        border-bottom: 1px solid $border-grey;
+        a.active {
+                color: $primary-teal !important;
+            }
+        a {
+            width: 100%;
+            i {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+
+// request dataset button
+
+//So that the navbar works on the majority of mobile screens
+@media only screen and (max-width : 600px) {
+    nav .right a{
+        padding-right: 0.5em !important;
+        padding-left:0.5em !important;
+        font-size:0.7em;
+    }
+    .nav-logo {
+        position: relative;
+        margin: auto;
+    }
+    nav {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+//So that the navbar works on the majority of small tablets/oversized phones
+@media only screen and (max-width : 770px) {
+    nav .right a{
+        padding-right: 0.5em !important;
+        padding-left:0.5em !important;
+        font-size:0.9em;
+    }
+    .brand-name {
+        display: none;
+    }
+    .mobile-hide {
+        display: none;
+    }
+    nav .nav-wrapper .register {
+        right: 22%;
+    }
+    .hide-on-small {
+        display: none;
+    }
+    .nav-logo {
+        position: relative;
+        margin: auto;
+    }
+    .nav-button {
+        margin-left: 0;
+    }
+
+}
+@media only screen and (min-width: 769px) and (max-width : 1050px) {
+    span.tablet-hide {
+        display: none;
+    }
+    nav a.button-collapse {
+        display: none;
+    }
+}
+@media only screen and (max-width :601px){
+  nav .dp-wrapper{
+    margin-top:0.7em;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width :916px){
+  .nav-input{
+    left:19%;
+  }
+}
+
+// ADDED CLASSES
+
+.grey.lighten-4 {
+    background-color: #f5f5f5 !important;
+}
+
+.right {
+    float: right !important;
+}
+
+img.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}

@@ -1,0 +1,63 @@
+{{!< default}}
+
+{{> nav}}
+
+{{> header}}
+
+<main class="main-liz" role="main">
+
+  {{#post}}
+    <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
+
+      <header class="postheader-liz">
+        <time class="date-liz" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time>
+        <h1 class="posttitle-liz" itemprop="headline">{{title}}</h1>
+      </header>
+
+      <div class="postcontent-liz" itemprop="articleBody">
+        {{content}}
+      </div>
+
+      {{#if tags}}
+        <div class="posttags-liz">
+          Tags: {{tags separator=" | "}}
+        </div>
+      {{/if}}
+
+      <div class="sharepost-liz">
+        <h4 class="share-liz">Share this post: &nbsp;</h4>
+        <a class="share-liz icon-twitter" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"><span class="hidethis_uber">Twitter</span></a>
+        <a class="share-liz icon-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}"><span class="hidethis_uber">Facebook</span></a>
+        <a class="share-liz icon-gplus" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}"><span class="hidethis_uber">Google+</span></a>
+      </div>
+
+      {{#if author}}
+        <footer class="postfooter-liz">
+
+          <address itemscope itemtype="http://schema.org/Person">
+            {{#if author.image}}
+              <div class="authorimage-liz"><img src="{{author.image}}" itemprop="image" /></div>
+            {{/if}}
+            <h4 class="authorname-liz"><span itemprop="author">{{author.name}}</span></h4>
+            {{#if author.website}}
+              <div class="authorwebsite-liz"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
+            {{/if}}
+          </address>
+
+          <div class="authorbio-liz">
+            <p>{{author.bio}}</p>
+          </div>
+        </footer>
+      {{/if}}
+    </article>
+  {{/post}}
+
+  {{#if pagination}}
+    <div class="pagination-liz">
+      {{{pagination}}}
+    </div>
+  {{/if}}
+
+</main>
+
+{{> footer}}

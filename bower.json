@@ -1,0 +1,21 @@
+{
+  "name": "liz",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "danielgynn <danielgynn@hotmail.co.uk>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/repositive/ghost",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.3"
+  }
+}
