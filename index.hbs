@@ -1,24 +1,28 @@
 {{!< default}}
 
 {{> nav}}
+
 {{> header}}
 
-<main class="main-liz" role="main">
+<main class="liz-wrapper" role="main">
 
   {{#foreach posts}}
 
     <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
+
       <header class="postheader-liz">
-        <time class="date-liz" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
-          {{date format='dddd DD MMM YYYY'}}
-        </time>
         <h1 class="posttitle-liz" itemprop="headline"><a href="{{{url}}}" rel="bookmark">
           {{title}}
         </a></h1>
+        <time class="date-liz" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+          {{date format='dddd DD MMM YYYY'}}
+        </time>
       </header>
-      <div class="postcontent-liz" itemprop="articleBody">
-        {{content}}
-      </div>
+
+      <section class="excerpt-liz">
+          <p>{{excerpt words="38"}} <a class="read-more" href="{{url}}">...</a></p>
+      </section>
+
       {{#if tags}}
         <div class="posttags-liz">
           Tags: {{tags separator=" | "}}

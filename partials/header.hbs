@@ -1,17 +1,15 @@
-<div role='banner' class="header-liz">
+<header class="liz-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}};">
+  <div role='banner' class="container main-container center-align">
 
-  <!-- {{#if @blog.logo}}<a class="logo-liz" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}} -->
+    <!-- <h1 class="blogtitle-liz">
+      <a title="{{@blog.title}}" href='{{@blog.url}}'>
+        {{{@blog.title}}}
+      </a>
+    </h1> -->
 
-  <h1 class="blogtitle-liz">
-    <a title="{{@blog.title}}" href='{{@blog.url}}'>
-      {{{@blog.title}}}
-    </a>
-  </h1>
-
-  <p class="blogdescription-liz">
-    <a title="{{@blog.title}}" href='{{@blog.url}}'>
+    <h2 class="white-text intro-text col m10 offset-m1">
       {{@blog.description}}
-    </a>
-  </p>
+    </h2>
 
-</div>
+  </div>
+</header>

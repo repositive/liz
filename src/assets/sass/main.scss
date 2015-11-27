@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
-@import "../../../bower_components/Materialize/sass/materialize.scss";
+@import "bower_components/materialize/sass/materialize";
 
 // imported from static
 @import "styles/_colours";
 @import "styles/_navbar";
 @import "styles/_typography";
 @import "styles/_images";
+// @import "styles/_ghost";
 
 /* CUSTOM MIXINS */
 
@@ -25,6 +26,62 @@
   &:-ms-input-placeholder      {@content};
 }
 /* END CUSTOM MIXINS */
+
+.liz-wrapper {
+  width:100%;
+  max-width: 42em;
+  margin: 0 auto;
+  img {
+      border: 0;
+      max-width: 100%;
+  }
+}
+
+.liz-header {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 20em;
+  margin-bottom: 5rem;
+  text-align: center;
+  background: #222 no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.pagination-liz {
+  text-align: center;
+  nav.pagination {
+    background-color: $background-grey;
+    color: $primary-text;
+    box-shadow: none;
+
+  }
+}
+
+
+article, aside, details,
+figcaption, figure,
+footer, header, hgroup,
+main, nav, section,
+summary { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden], template { display: none; }
+html {
+   font-family: sans-serif;
+   -ms-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+.post {
+    position: relative;
+    width: 80%;
+    max-width: 710px;
+    margin: 4rem auto;
+    padding-bottom: 4rem;
+    border-bottom: #EBF2F6 1px solid;
+    word-wrap: break-word;
+}
 
 html{
   box-sizing:border-box;
