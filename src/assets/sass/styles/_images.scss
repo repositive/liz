@@ -3,7 +3,7 @@
     height: 100px;
 }
 .team-img{
-    max-width:10em;
+    width:10em;
 }
 .press-img{
     max-width:80%;
@@ -30,6 +30,13 @@ footer .social-media-icon {
 }
 img.scale-img {
 	height: 100%;
+}
+
+.circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-clip: padding-box;
 }
 .dp-wrapper{
   height:40px;
