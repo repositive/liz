@@ -1,24 +1,22 @@
-<section class="post-meta">
-  <ul>
-    <li>
-      {{#author}}
-        {{#if image}}
-          <img class="author-thumb" src="{{image}}" alt="{{name}}" nopin="nopin" />
-        {{else}}
-          <i class="fa fa-user"></i>
-        {{/if}}
-        <a href="{{url}}">{{name}}</a>
-      {{/author}}
-    </li>
-    <li>
-      <i class="fa fa-calendar"></i><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"> {{date format="DD MMMM YYYY"}}</time>
-    </li>
-    <li>
-      {{#if tags}}
-        <div class="posttags">
-          <i class="fa fa-tag"></i> {{tags separator=" | "}}
-        </div>
+<div class="post-meta ">
+  <span>
+    {{#author}}
+      {{#if image}}
+        <img class="author-thumb" src="{{image}}" alt="{{name}}" nopin="nopin" />
+      {{else}}
+        <i class="fa fa-user"></i>
       {{/if}}
-    </li>
-  </ul>
-</section>
+      <a href="{{url}}">{{name}}</a>
+    {{/author}}
+    <span> | </span>
+  </span>
+  <span>
+    <i class="fa fa-calendar"></i><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"> {{date format="DD MMMM YYYY"}}</time>
+  </span>
+  <span>
+    {{#if tags}}
+      <span> | </span>
+      <i class="fa fa-tag"></i> {{tags separator=", "}}
+    {{/if}}
+  </span>
+</div>

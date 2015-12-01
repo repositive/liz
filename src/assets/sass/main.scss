@@ -11,7 +11,7 @@ html {
 @import "styles/_navbar";
 @import "styles/_typography";
 @import "styles/_images";
-// @import "styles/_ghost";
+// (just in case) @import "styles/_ghost";
 
 /* CUSTOM MIXINS */
 
@@ -32,7 +32,7 @@ html {
 /* END CUSTOM MIXINS */
 
 section {
-  margin: 2em 0;
+  margin: 1.5em 0;
 }
 
 .liz-wrapper {
