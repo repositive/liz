@@ -1,9 +1,13 @@
-<header class="liz-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}};">
-  <div role='banner' class="container main-container center-align">
+{{#if @blog.cover}}
+  <header class="liz-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}};">
+    <div role='banner' class="container main-container center-align">
 
-    <h2 class="white-text intro-text vertical">
-      {{@blog.description}}
-    </h2>
+      {{#if @blog.description}}
+        <h2 class="white-text intro-text vertical">
+          {{@blog.description}}
+        </h2>
+      {{/if}}
 
-  </div>
-</header>
+    </div>
+  </header>
+{{/if}}
