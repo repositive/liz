@@ -1,0 +1,69 @@
+{{!< default}}
+
+{{> nav}}
+
+{{#author}}
+
+    {{#if cover}}
+      <header class="liz-header {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}};">
+        <!-- <div role='banner' class="container main-container center-align">
+        </div> -->
+      </header>
+    {{/if}}
+
+    <section class="author-profile inner">
+        {{#if image}}
+        <figure class="author-image">
+            <div class="img" style="background-image: url({{image}})">
+        </figure>
+        {{/if}}
+        <h1 class="author-title">{{name}}</h1>
+        {{#if bio}}
+            <h2 class="author-bio">{{bio}}</h2>
+        {{/if}}
+        <div class="author-meta">
+            {{#if location}}<span class="author-location fa fa-map-marker"> {{location}}</span>{{/if}}
+            {{#if website}}<a href="{{website}}"><span class="author-link fa fa-link"> {{website}}</span></a>{{/if}}
+            <span class="author-stats"><i class="fa fa-bar-chart"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+        </div>
+    </section>
+{{/author}}
+
+<main class="liz-wrapper" role="main">
+
+  {{#foreach posts}}
+
+    <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
+
+      <header class="post-header">
+        <h2 class="post-title" itemprop="headline"><a href="{{{url}}}" rel="bookmark">
+          {{title}}
+        </a></h2>
+
+        <section class="excerpt-liz">
+            <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
+        </section>
+
+        <section class="post-meta">
+          {{> post-meta}}
+        </section>
+
+      </header>
+
+
+    </article>
+
+    <div class="divider"></div>
+
+  {{/foreach}}
+
+
+  {{#if pagination}}
+    <div class="pagination-liz">
+      {{{pagination}}}
+    </div>
+  {{/if}}
+
+</main>
+
+{{> footer}}
