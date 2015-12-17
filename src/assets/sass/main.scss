@@ -98,23 +98,7 @@ section {
     display: block-inline;
     padding: 0 0.5em;
   }
-  .fa-twitter {
-    color: #55acee;
-    &:hover {
-      color: #55acee * 1.2;
-    }
-  }
-  .fa-facebook-square {
-    color: #3b5998;
-    &:hover {
-      color: #8b9dc3;
-    }
-  }
-  .fa-google-plus {
-    color: #db4437;
-    &:hover {
-      color: #db4437 * 1.4;
-    }
+  img:hover {
   }
 }
 
