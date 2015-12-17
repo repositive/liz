@@ -5,7 +5,7 @@
 {{> nav}}
 
 {{#if image}}
-  <header class="liz-header post-image {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}};"></header>
+  <header class="liz-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}};"></header>
 {{/if}}
 
 <main class="liz-wrapper" role="main">
@@ -14,11 +14,9 @@
 
       <header class="post-header">
         <h2 class="post-title centre">{{title}}</h2>
-
         <section class="post-meta">
           {{> post-meta}}
         </section>
-
       </header>
 
       <section class="post-content">
@@ -41,7 +39,6 @@
       <div class="divider"></div>
 
       {{#author}}
-
         <section class="author center">
             {{#if image}}
                 <a href="{{url}}"><img class="author-post-img" src="{{image}}"></a>
