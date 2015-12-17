@@ -96,7 +96,14 @@
 }
 
 .author-title {
-    margin: 1.5rem 0 1rem;
+  margin: 1.5rem 0 1rem;
+  color: $primary-text;
+  a {
+    color: $primary-text;
+  }
+}
+.author-title a:hover {
+  text-decoration: underline;
 }
 
 .author-bio {
@@ -122,12 +129,17 @@
   border-radius: 50%;
 }
 .author-meta span {
+  color: $primary-text;
     display: inline-block;
     margin: 0 2rem 1rem 0;
     word-wrap: break-word;
 }
 .author-meta a {
-    text-decoration: none;
+  color: $primary-text;
+  text-decoration: none;
+  :hover {
+    text-decoration: underline;
+  }
 }
 
 /* Turn off meta for page2+ to make room for extra

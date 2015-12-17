@@ -1,12 +1,13 @@
-<div class="post-meta ">
+<div class="post-meta">
   <span>
     {{#author}}
+      <a href="{{url}}">
       {{#if image}}
         <img class="author-thumb" src="{{image}}" alt="{{name}}" nopin="nopin" />
       {{else}}
         <i class="fa fa-user"></i>
       {{/if}}
-      <a href="{{url}}">{{name}}</a>
+      {{name}}</a>
     {{/author}}
     <span> | </span>
   </span>
