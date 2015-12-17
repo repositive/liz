@@ -93,7 +93,7 @@ section {
 }
 
 .share {
-  text-align: center;
+  text-align: left;
   a {
     display: block-inline;
     padding: 0 0.5em;
@@ -133,7 +133,7 @@ section {
 
 .disqus {
   h4 {
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -172,7 +172,7 @@ html {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
 }

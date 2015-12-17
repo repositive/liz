@@ -50,25 +50,19 @@
       <div class="divider"></div>
 
       {{#author}}
+
         <section class="author center">
-
-          <h4>Written by <a href="{{url}}">{{name}}</a></h4>
-          <p>Read <a href="{{url}}">more posts</a> by this author.</p>
             {{#if image}}
-              <div class="center">
-                <a href="{{url}}"><img class="team-img circle" src="{{image}}"></a>
-                <!-- <a href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a> -->
-              </div>
+                <a href="{{url}}"><img class="author-post-img" src="{{image}}"></a>
             {{/if}}
-
+            <h3 class="author-title">Read more posts by <a href="{{url}}">{{name}}</a></h3>
             {{#if bio}}
-                <p>{{bio}}</p>
+              <h4 class="author-bio">{{bio}}</h4>
             {{/if}}
             <div class="author-meta">
-                {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+              {{#if location}}<span class="author-location fa fa-map-marker"> {{location}}</span>{{/if}}
+              {{#if website}}<a href="{{website}}"><span class="author-link fa fa-link"> {{website}}</span></a>{{/if}}
             </div>
-
         </section>
       {{/author}}
 
