@@ -1,0 +1,68 @@
+{{!< default}}
+
+{{> nav}}
+
+{{#if tag.image}}
+<header class="liz-header {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}no-cover{{/if}};">
+  <div role='banner' class="container main-container center-align">
+
+    <!-- <h2 class="intro-text vertical {{#if tag.image}} white-text {{/if}}">{{tag.name}}</h2> -->
+
+    <!-- {{#if tag.description}}
+        {{tag.description}}
+    {{else}}
+    <h2 class="intro-text vertical">{{tag.name}}</h2>
+      A {{pagination.total}}-post collection
+    {{/if}} -->
+
+  </div>
+</header>
+{{/if}}
+
+<section class="author-profile inner">
+    <h1 class="author-title">{{tag.name}}</h1>
+    {{#if tag.description}}
+      <h2 class="author-bio tag-descr">{{tag.description}}</h2>
+    {{else}}
+      <h2 class="author-bio tag-descr">A {{pagination.total}}-post collection</h2>
+    {{/if}}
+</section>
+
+<main class="liz-wrapper" role="main">
+
+  {{#foreach posts}}
+
+    <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
+
+      <header class="post-header">
+        <h2 class="post-title" itemprop="headline"><a href="{{{url}}}" rel="bookmark">
+          {{title}}
+        </a></h2>
+
+        <section class="excerpt-liz">
+            <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
+        </section>
+
+        <section class="post-meta">
+          {{> post-meta}}
+        </section>
+
+      </header>
+
+
+    </article>
+
+    <div class="divider"></div>
+
+  {{/foreach}}
+
+
+  {{#if pagination}}
+    <div class="pagination-liz">
+      {{{pagination}}}
+    </div>
+  {{/if}}
+
+</main>
+
+{{> footer}}
