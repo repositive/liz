@@ -28,7 +28,11 @@
   {{! Prism.js syntax highlighting}}
   <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
   {{! Mathjax configuration}}
-  <script type="text/javascript" src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script type="text/javascript" src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'>
+    MathJax.Hub.Config({  
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
   {{! GoSquared configuration }}
   <script>
     !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
