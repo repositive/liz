@@ -173,6 +173,14 @@ html {
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
 }
+.post-content {
+  ul {
+    padding-left: 2rem;
+  }
+  ul li {
+    list-style-type: disc;
+  }
+}
 
 html{
   box-sizing:border-box;
