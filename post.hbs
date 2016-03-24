@@ -2,13 +2,11 @@
 
 {{#post}}
 
-{{> nav}}
-
 {{#if image}}
   <header class="liz-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}};"></header>
 {{/if}}
 
-<main class="liz-wrapper" role="main">
+<main class="main-container container" role="main">
 
   <article class="{{post_class}}">
 
@@ -59,5 +57,3 @@
 {{/post}}
 
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-{{> footer}}

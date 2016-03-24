@@ -16,17 +16,22 @@
         </a>
       {{/if}}
 
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
       <ul class="right hide-on-small">
-        <li><a href="http://repositive.io"><span>HOME</span></a><li>
-        <li><a href="http://repositive.io/about"><span>ABOUT</span></a></li>
-        <li><a href="http://repositive.io/team"><span>TEAM</span></a></li>
+        <li><a href="http://repositive.io/product"><span>PRODUCT</span></a></li>
         <li><a class="active" href="/"><span>BLOG</span></a></li>
-        <li><a href="http://repositive.io/faq"><span>FAQ</span></a></li>
-        <li><a href="http://repositive.io/press"><span>PRESS</span></a></li>
-        <li><a href="http://repositive.io/jobs"><span>JOBS</span></a></li>
-        <li><a href="http://discover.repositive.io/users/login"><span>LOGIN</span></a></li>
-        <li class="hide-on-small-only nav-button"><a class="waves-effect waves-light teal btn white-text z-depth-0" href="http://discover.repositive.io/signup-form">BETA SIGN UP</a></li>
-        <!-- <li class="hide-on-small-only nav-button"><a class="waves-effect waves-light teal btn white-text z-depth-0" href="http://discover.repositive.io/verify" target="_blank">BETA SIGN UP</a></li> -->
+        <li><a href="http://repositive.io/about"><span>ABOUT</span></a></li>
+        <li><a href="http://discover.repositive.io/users/login" onclick="_gaq.push(['_trackEvent', 'navbar', 'login link', 'click']);"><span>LOGIN</span></a></li>
+        <li class="hide-on-small-only nav-button"><a class="waves-effect waves-light teal btn white-text z-depth-0" href="http://discover.repositive.io/signup-form">TRY IT</a></li>
+      </ul>
+
+      <ul class="side-nav center" id="mobile-demo">
+        <li><a href="http://repositive.io/product"><span>PRODUCT</span></a></li>
+        <li><a class="active" href="/"><span>BLOG</span></a></li>
+        <li><a href="http://repositive.io/about"><span>ABOUT</span></a></li>
+        <li><a href="http://discover.repositive.io/users/login" onclick="_gaq.push(['_trackEvent', 'navbar', 'login link', 'click']);"><span>LOGIN</span></a></li>
+        <li class="nav-button"><a class="waves-effect waves-light teal btn white-text z-depth-0" href="http://discover.repositive.io/signup-form" target="_blank" onclick="_gaq.push(['_trackEvent', 'navbar', 'beta button', 'click']);">TRY IT</a></li>
       </ul>
 
     </div>

@@ -1,44 +1,33 @@
 {{!< default}}
 
-{{> nav}}
-
 {{> header}}
 
-<main class="liz-wrapper" role="main">
+<main class="main-container container" role="main">
 
+  <section class="section">
   {{#foreach posts}}
-
     <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
-
       <header class="post-header">
-        <h2 class="post-title" itemprop="headline"><a href="{{{url}}}" rel="bookmark">
-          {{title}}
-        </a></h2>
-
+        <h2 class="post-title" itemprop="headline">
+          <a href="{{{url}}}" rel="bookmark">{{title}}</a>
+        </h2>
         <section class="excerpt-liz">
-            <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
+          <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
         </section>
-
         <section class="post-meta">
           {{> post-meta}}
         </section>
-
       </header>
-
-
     </article>
 
     <div class="divider"></div>
-
   {{/foreach}}
-
 
   {{#if pagination}}
     <div class="pagination-liz">
       {{{pagination}}}
     </div>
   {{/if}}
+</section>
 
 </main>
-
-{{> footer}}
