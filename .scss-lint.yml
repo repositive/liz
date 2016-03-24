@@ -1,0 +1,17 @@
+scss_files: 'assets/scss/**/*.scss'
+
+linters:
+  PropertySortOrder:
+    order:
+      - width
+      - height
+      - display
+      - margin
+  VendorPrefix:
+    enabled: false
+  ImportantRule:
+    enabled: false
+  Indentation:
+    enabled: false
+  IdSelector:
+    enabled: false

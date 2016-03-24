@@ -1,6 +1,16 @@
-/* ==========================================================================
-   6. Author profile
-   ========================================================================== */
+.author {
+  h4 {
+   text-align: center;
+  }
+}
+
+.author-thumb {
+ width: 24px;
+ height: 24px;
+ float: left;
+ margin-right: 9px;
+ border-radius: 100%;
+}
 
 .post-head.main-header {
     height: 65vh;

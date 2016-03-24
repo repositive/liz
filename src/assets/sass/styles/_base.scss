@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.main-container {
+  width: 960px;
+}
+
+.container {
+  padding: 0 1.5rem;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.z-depth-0 {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.fixed-height-tile {
+  height: 9rem;
+}
+
+.list-inline {
+  list-style-type: none;
+  margin-bottom: .3rem;
+
+  li {
+    display: inline !important;
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+}
+
+hr {
+  width: 10rem;
+  height: .3rem;
+  border-radius: 200px;
+  background-color: $sub-text;
+  border: 0 solid $color-black;
+  margin-top: 0;
+}

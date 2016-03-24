@@ -1,53 +1,31 @@
-@charset "UTF-8";
-
-@import "bower_components/materialize/sass/materialize";
-
-html {
-  background-color: #fff;
-}
+@charset 'UTF-8';
+@import 'bower_components/materialize/sass/materialize';
 
 // imported from static
-@import "styles/_colours";
-@import "styles/_navbar";
-@import "styles/_typography";
-@import "styles/_images";
-@import "styles/_author";
-@import "styles/_prism";
+@import 'styles/colours';
+@import 'styles/base';
+@import 'styles/typography';
+@import 'styles/navbar';
+@import 'styles/responsive';
+@import 'styles/footer';
+@import 'styles/images';
+@import 'styles/author';
+@import 'styles/post';
+@import 'styles/prism';
 
-/* CUSTOM MIXINS */
-
-//to use: @include border-radius(2px);
+//to use: @include border-radius(2px)
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
-/*mixin for styling a placeholder*/
+// mixin for styling a placeholder
 @mixin placeholder {
   &::-webkit-input-placeholder {@content};
-  &:-moz-placeholder           {@content};
-  &::-moz-placeholder          {@content};
-  &:-ms-input-placeholder      {@content};
-}
-/* END CUSTOM MIXINS */
-
-section {
-  margin: 1.5em 0;
-}
-
-.liz-wrapper {
-  width:100%;
-  max-width: 960px;
-  margin: 0 auto;
-
-}
-
-.post-content {
-  img {
-      border: 0;
-      max-width: 100%;
-  }
+  &::-moz-placeholder {@content};
+  &::-moz-placeholder {@content};
+  &:-ms-input-placeholder {@content};
 }
 
 .liz-header {
@@ -56,18 +34,10 @@ section {
   width: 100%;
   height: 20em;
   line-height: 20em;
-  margin: 0 0 5rem 0;
   align-items: center;
   background: #fff no-repeat center center;
   background-size: cover;
-  overflow: hidden;
   border-bottom: 1px solid #eeeeee;
-  .vertical {
-    margin: 0;
-  }
-}
-.post-image {
-  height: 30em;
 }
 
 .pagination-liz {
@@ -82,353 +52,4 @@ section {
 
 .article-liz {
   padding-bottom: 1em;
-}
-
-.post-title {
-  a {
-    color: $primary-text;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-}
-
-.share {
-  text-align: left;
-  a {
-    display: block-inline;
-    padding: 0 0.5em;
-  }
-  img:hover {
-  }
-}
-
-.post-meta {
-  color: $unfocus-grey !important;
-  .fa {
-    font-size: 16px;
-    height: 16px;
-    line-height: 16px;
-    padding: 0 5px 0 5px;
-    color: #bdbdbd;
-  }
-  span {
-    font-size: 13.7px;
-    padding: 0 0 0 5px;
-    font-weight: 300;
-    color: #9e9e9e;
-  }
-  time {
-    font-family: $body-font-stack;
-  }
-  a {
-    color: $unfocus-grey !important;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.disqus {
-  h4 {
-    text-align: left;
-  }
-}
-
-.author {
-  h4 {
-    text-align: center;
-  }
-}
-.author-thumb {
-    width: 24px;
-    height: 24px;
-    float: left;
-    margin-right: 9px;
-    border-radius: 100%;
-}
-
-.social-media-icon {
-  color: white;
-}
-
-article, aside, details,
-figcaption, figure,
-footer, header, hgroup,
-main, nav, section,
-summary { display: block; }
-audio, canvas, video { display: inline-block; }
-audio:not([controls]) { display: none; height: 0; }
-[hidden], template { display: none; }
-html {
-   font-family: sans-serif;
-   -ms-text-size-adjust: 100%;
-   -webkit-text-size-adjust: 100%;
-}
-.post {
-    position: relative;
-    width: 80%;
-    max-width: 710px;
-    margin: 4rem auto;
-    border-bottom: #EBF2F6 1px solid;
-    word-wrap: break-word;
-}
-.post-content {
-  ul {
-    padding-left: 2rem;
-  }
-  ul li {
-    list-style-type: disc;
-  }
-}
-
-html{
-  box-sizing:border-box;
-}
-*, *:before, *:after{
-  box-sizing:inherit;
-}
-html, body{
-    height: 100%;
-    margin: 0;
-}
-body{
-    padding-top:50px;
-}
-body.users-login, body.verify, body.users-signup {
-    background: #fff;
-}
-.main-container {
-  width: 960px;
-}
-.intro-text{
-    font-size: 2.2em;
-    font-weight: 400;
-}
-
-.intro-img {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    img {
-        width: 100%;
-    }
-}
-.outer-wrap{
-    min-height: 100%;
-    position:relative;
-    padding-bottom:60px;
-    position: relative;
-}
-.min-full-height {
-    min-height: 100%;
-    position: relative;
-}
-.full-height {
-    height: 100%;
-    position: relative;
-}
-.stick-to-bottom {
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 60px;
-    h3 {
-        margin: 1em 0 1em 0;
-    }
-}
-.padding-left-right {
-    padding: 0 0.75rem;
-}
-
-//use for name then position e.g. Fiona CEO
-.no-margin-bottom{
-    margin-bottom:0;
-    line-height:1;
-}
-.no-margin-top {
-    margin-top: 0;
-}
-.no-margin {
-    margin: 0 !important;
-}
-.z-depth-0{
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
-}
-.job-notice {
-    border: 1px solid #FFC861;
-    background: rgb(255, 244, 225);
-    padding: 0.5em;
-    border-radius: 2px;
-    span {
-        color: $primary-text;
-    }
-}
-.job ul li{
-    list-style-type: circle;
-}
-.job{
-  margin-bottom:2em;
-  h4{
-    margin-top:1.8em;
-    margin-bottom:0;
-    line-height:1;
-  }
-  p, li{
-    font-weight:300;
-  }
-}
-//job page
-#joblist{
-    margin-top: 3em;
-    h5 {
-        margin-bottom: 0;
-    }
-
-    .collapsible-header{
-      padding-left:1.2em;
-      padding-right:1.2em;
-      height: auto;
-    }
-    .collapsible-body {
-        padding: 0.8em 1.5em 1em 1.5em;
-        .divider {
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-            }
-        p {
-            padding:0.5em 0 0.5em 0;
-            line-height: 1.5;
-            font-weight:300;
-        }
-        h4 {
-            margin-top: 0.7em;
-            margin-bottom: 0.7em;
-        }
-        ul{
-          li{
-            list-style-type:circle;
-            font-weight:300;
-          }
-          margin-left:1em;
-        }
-        h6{
-          margin-top:1.8em;
-          margin-bottom:0.5em;
-          text-transform:uppercase;
-        }
-    }
-
-}
-.fixed-height-tile{
-    height: 9em;
-}
-.unhilight-link{
-    color: $primary-text; //Dark grey for normal text
-}
-.list-inline{
-    list-style-type: none;
-    margin-bottom:0.3em;
-    li {
-        display: inline !important;
-        padding-left: 0.4em;
-        padding-right: 0.4em;
-    }
-}
-hr{
-    background-color:$sub-text;
-    @include border-radius(200px);
-    border: 0px solid #000000;
-    height:0.3em;
-    width:10em;
-    margin-top:0;
-}
-footer{
-    padding-bottom:1em;
-    margin-top:3em;
-}
-footer.platform{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:60px;   /* Height of the footer */
-    ul{
-        margin-bottom:0;
-        padding-bottom:0.4em;
-        padding-top:0.4em;
-        li{
-            padding-left:1em;
-            padding-right:1em;
-            font-family:$head-font-stack;
-            a:hover{
-              color:white !important;
-            }
-            a{
-              cursor:pointer;
-            }
-        }
-    }
-}
-.full-width{
-  width:100%;
-}
-
-//PLATFORM
-.platform .divider {
-    margin: 1em 0 1em 0;
-}
-.btn-upvote{
-  color:$sub-text !important;
-  background-color:white;
-  font-size:0.8em;
-  text-align:left;
-  padding:0.4em 0.7em 0.4em 0.7em;
-  margin:0;
-  @include border-radius(2px);
-  border:1px solid $border-grey;
-  span{
-    border-left:1px solid $border-grey;
-    margin-left:0.7em;
-    padding-left:0.7em;
-  }
-}
-//Sign up page
-
-.privacy-msg {
-    font-size: 0.8em;
-    li {
-        list-style: circle;
-        text-align: left;
-    }
-}
-.or-div{
-    height: 1px;
-    background-color: $unfocus-grey;
-    text-align: center;
-    margin-bottom:3em;
-    span{
-        background-color: white;
-        position: relative;
-        top: -0.7em;
-        padding-left:5px;
-        padding-right:5px;
-        color:$unfocus-grey;
-    }
-}
-
-@media only screen and (min-width: 993px) and (max-width: 1024px) {
-    .container {
-        width: 80%;
-    }
-}
-@media only screen and (max-width: 960px) {
-    .main-container {
-        width: 100%;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .col.s12 {
-        margin-top: 1rem;
-    }
 }
