@@ -5,9 +5,10 @@ footer {
   .col {
     margin-bottom: 1rem;
   }
-  ul{
+
+  ul {
     &:not(.collapsible):not(.list-inline) {
-        width: 170px;
+        width: 175px;
     }
   }
 
