@@ -5,6 +5,11 @@ footer {
   .col {
     margin-bottom: 1rem;
   }
+  ul{
+  &:not(.collapsible,.list-inline) {
+      width: 170px;
+    }
+  }
 
   h5 {
     font-family: $head-font-stack;
