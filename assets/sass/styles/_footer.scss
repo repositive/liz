@@ -6,8 +6,8 @@ footer {
     margin-bottom: 1rem;
   }
   ul{
-  &:not(.collapsible,.list-inline) {
-      width: 170px;
+    &:not(.collapsible):not(.list-inline) {
+        width: 170px;
     }
   }
 

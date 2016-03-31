@@ -6,14 +6,15 @@
     "danielgynn <danielgynn@hotmail.co.uk>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/repositive/ghost",
+  "homepage": "https://github.com/tryGhost/ghost",
   "moduleType": [],
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "/bower_components"
   ],
   "dependencies": {
     "Materialize": "materialize#~0.97.3"
