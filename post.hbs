@@ -27,10 +27,7 @@
         {{> share}}
       </section>
 
-      <div class="divider"></div>
-
       <section class="disqus">
-        <h4>Leave a comment</h4>
         {{> disqus}}
       </section>
 
@@ -38,17 +35,17 @@
 
       {{#author}}
         <section class="author center">
-            {{#if image}}
-                <a href="{{url}}"><img class="author-post-img" src="{{image}}"></a>
-            {{/if}}
-            <h3 class="author-title">Read more posts by <a href="{{url}}">{{name}}</a></h3>
-            {{#if bio}}
-              <h4 class="author-bio">{{bio}}</h4>
-            {{/if}}
-            <div class="author-meta">
-              {{#if location}}<span class="author-location fa fa-map-marker"> {{location}}</span>{{/if}}
-              {{#if website}}<a href="{{website}}"><span class="author-link fa fa-link"> {{website}}</span></a>{{/if}}
-            </div>
+          {{#if image}}
+              <a href="{{url}}"><img class="author-post-img" src="{{image}}"></a>
+          {{/if}}
+          <h3 class="author-title">Read more posts by <a href="{{url}}">{{name}}</a></h3>
+          {{#if bio}}
+            <h4 class="author-bio">{{bio}}</h4>
+          {{/if}}
+          <div class="author-meta">
+            {{#if location}}<span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span>{{/if}}
+            {{#if website}}<a href="{{website}}"><span class="author-link"><i class="fa fa-link"></i> {{website}}</span></a>{{/if}}
+          </div>
         </section>
       {{/author}}
 

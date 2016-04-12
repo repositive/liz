@@ -34,12 +34,16 @@
 }
 
 .share {
+  display: block-inline;
   text-align: left;
-  a {
-    display: block-inline;
-    padding: 0 0.5em;
+
+  .row {
+    margin-top: 1rem;
   }
-  img:hover {
+
+  a {
+    padding: 0 .3em;
+    float: right;
   }
 }
 
