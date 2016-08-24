@@ -3,20 +3,18 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "danielgynn <danielgynn@hotmail.co.uk>"
+    "Daniel Gynn <danielgynn@hotmail.co.uk>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/tryGhost/ghost",
-  "moduleType": [],
+  "homepage": "https://github.com/repositive/liz",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    "/bower_components"
+    "tests"
   ],
   "dependencies": {
-    "Materialize": "materialize#~0.97.3"
+    "materialize": "^0.97.7"
   }
 }
