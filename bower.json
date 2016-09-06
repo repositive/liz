@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "Daniel Gynn <danielgynn@hotmail.co.uk>"
+    "danielgynn <danielgynn@hotmail.co.uk>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/repositive/liz",
@@ -13,8 +13,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "materialize": "^0.97.7"
-  }
+  ]
 }
