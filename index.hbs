@@ -3,43 +3,30 @@
 {{> header}}
 
 <main class="main-container container" role="main">
-
   <section class="section">
-
-    <div class="category-menu">
-      <ul>
-        <li class="chip"><a class="unfocus-grey-text" href="/tag/press-release">Press Releases</a></li>
-        <li class="chip"><a class="unfocus-grey-text" href="/tag/events">Events</a></li>
-        <li class="chip"><a class="unfocus-grey-text" href="/tag/data-access">Data Access</a></li>
-        <li class="chip"><a class="unfocus-grey-text" href="/tag/data-sharing">Data Sharing</a></li>
-        <li class="chip"><a class="unfocus-grey-text" href="/tag/repository">Repositories</a></li>
-        <li class="chip"><a class="unfocus-grey-text" href="/tag/development">Development</a></li>
-      </ul>
-    </div>
-
-  {{#foreach posts}}
-    <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
-      <header class="post-header">
-        <h2 class="post-title" itemprop="headline">
-          <a href="{{{url}}}" rel="bookmark">{{title}}</a>
-        </h2>
-        <section class="excerpt-liz">
-          <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
-        </section>
-        <section class="post-meta">
-          {{> post-meta}}
-        </section>
-      </header>
-    </article>
-
+    {{> tag-nav}}
     <div class="divider"></div>
-  {{/foreach}}
+    {{#foreach posts}}
+      <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
+        <header class="post-header">
+          <h2 class="post-title" itemprop="headline">
+            <a href="{{{url}}}" rel="bookmark">{{title}}</a>
+          </h2>
+          <section class="excerpt-liz">
+            <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
+          </section>
+          <section class="post-meta">
+            {{> post-meta}}
+          </section>
+        </header>
+      </article>
+      <div class="divider"></div>
+    {{/foreach}}
 
-  {{#if pagination}}
-    <div class="pagination-liz">
-      {{{pagination}}}
-    </div>
-  {{/if}}
-</section>
-
+    {{#if pagination}}
+      <div class="pagination-liz">
+        {{{pagination}}}
+      </div>
+    {{/if}}
+  </section>
 </main>

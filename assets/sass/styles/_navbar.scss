@@ -99,6 +99,21 @@ nav {
   border-left: 1px solid $border-grey;
 }
 
+// Navigation menu for tag categories
+.category-menu {
+  display: flex;
+  margin: 1rem auto;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  background: none;
+
+  a:hover {
+    text-decoration: none !important;
+    border-radius: 2px;
+  }
+}
+
 // So that the navbar works on the majority of mobile screens
 @media only screen and (max-width : 600px) {
   nav .right a {
