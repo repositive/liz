@@ -39,4 +39,12 @@
     width: 100% !important;
     margin: 1rem auto !important;
   }
+
+  .category-menu {
+    ul a {
+      height: 40px;
+      padding: 0 4px;
+      font-size: .5rem;
+    }
+  }
 }
