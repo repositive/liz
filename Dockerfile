@@ -1,3 +1,3 @@
-FROM ghost:0.11.0
+FROM ghost:0.7.9
 
 COPY . /usr/src/ghost/content/themes/liz
