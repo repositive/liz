@@ -20,7 +20,7 @@ deployment:
     branch: master
     commands:
       - node node_modules/gulp/bin/gulp.js styles
-      - docker build -t registry.repositive.io:5000/ghost
+      - docker build -t registry.repositive.io:5000/ghost .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS registry.repositive.io:5000
       - docker push registry.repositive.io:5000/ghost
       - mkdir rancher && cd rancher
@@ -33,7 +33,7 @@ deployment:
     tag: /release-.*/
     commands:
       - node node_modules/gulp/bin/gulp.js styles
-      - docker build -t registry.repositive.io:5000/ghost:$CIRCLE_TAG
+      - docker build -t registry.repositive.io:5000/ghost:$CIRCLE_TAG .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS registry.repositive.io:5000
       - docker push registry.repositive.io:5000/ghost:$CIRCLE_TAG
 
