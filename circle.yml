@@ -17,7 +17,7 @@ test:
     - echo skip
 deployment:
   development:
-    branch: development
+    branch: master
     commands:
       - node node_modules/gulp/bin/gulp.js styles
       - docker build -t registry.repositive.io:5000/ghost
