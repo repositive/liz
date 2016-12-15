@@ -1,0 +1,24 @@
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+
+.footer {
+  background-color: $color-dark-grey;
+}
+
+.footer__list-heading {
+  font-family: $font-stack-varela;
+  text-transform: uppercase;
+}
+
+.footer__list-item {
+  font-weight: 400;
+  width: 170px;
+
+  &:hover {
+    color: rgba(255, 2255, 255, 0.77);
+  }
+}
+.footer__social-icon-list {
+  margin-bottom: 0;
+}

@@ -2,25 +2,34 @@
 
 {{> header}}
 
-<main class="main-container container" role="main">
-  <section class="section">
-    {{> tag-nav}}
-    <div class="divider"></div>
+<div class="grid__wrap">
+  <div class="grid">
+
+    <section>
+      {{> tag-nav }}
+    </section>
+
+    {{> divider }}
+
     {{#foreach posts}}
-      <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
-        <header class="post-header">
-          <h2 class="post-title" itemprop="headline">
-            <a href="{{{url}}}" rel="bookmark">{{title}}</a>
+      <article class="grid__col grid__col--3-of-3" role="article" itemscope itemtype="http://schema.org/Article">
+
+        <a href="{{{url}}}" rel="bookmark">
+          <h2 class="post-title c-heading-section u-text-dark-grey" itemprop="headline">
+            {{title}}
           </h2>
-          <section class="excerpt-liz">
-            <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
-          </section>
-          <section class="post-meta">
-            {{> post-meta}}
-          </section>
-        </header>
+        </a>
+
+        <section class="excerpt-liz">
+          <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
+        </section>
+
+        {{> post-meta}}
+        <div class="o-sp--unit"></div>
       </article>
-      <div class="divider"></div>
+
+      {{> divider}}
+
     {{/foreach}}
 
     {{#if pagination}}
@@ -28,5 +37,6 @@
         {{{pagination}}}
       </div>
     {{/if}}
-  </section>
-</main>
+
+  </div>
+</div>

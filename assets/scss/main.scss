@@ -1,0 +1,66 @@
+/* ==========================================================================
+    MAIN.CSS IMPORTS
+   ========================================================================== */
+
+// Overview
+/* ==================================== */
+/*
+  * Based on Inverted-Triangle CSS Architecture & InuitCSS framework by Harry Roberts (@csswizardry)
+  * > https://github.com/inuitcss/inuitcss
+  * Specifity is managed by compiling CSS in ascending order of Specificity (see Directory Structure below)
+  * Class namespaces are managed both with BEM naming conventions & special prefixes: '.o-', '.c-', '.u-'
+  * > see article: http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+*/
+
+// Directory Structure
+/* ==================================== */
+/*
+  * Settings
+  * > Global variables, site-wide settings, config switches, etc
+  * Tools
+  * > Site-wide mixins and functions
+  * Generic
+  * > Low-specificity, far-reaching rulesets (e.g. resets).
+  * Elements
+  * > Unclassed HTML elements, e.g. ul {}
+  * Objects
+  * > Objects, abstractions, and design patterns e.g. .o-list-inline {}
+  * Components
+  * > Discrete, complete chunks of UI e.g. .c-nav {}
+  * Utilities
+  * > High-specificity, explicit selectors e.g. .u-ta--center {}
+*/
+
+@import 'shared/settings/settings.global';
+@import 'shared/settings/settings.color';
+
+@import 'shared/tools/tools.mixins';
+
+@import 'shared/generic/generic.box-sizing';
+@import 'shared/generic/generic.normalize';
+@import 'shared/generic/generic.shared';
+
+@import 'shared/elements/elements.base';
+@import 'shared/elements/elements.images';
+
+@import 'shared/objects/objects.grid-wrapper';
+@import 'shared/objects/objects.toast-grid';
+@import 'shared/objects/objects.spacing';
+@import 'shared/objects/objects.lists';
+
+// @import 'custom/components/components.accordion';
+// @import 'custom/components/components.animation';
+@import 'shared/components/components.buttons';
+// @import 'custom/components/components.cards';
+@import 'shared/components/components.divider';
+@import 'custom/components/components.footer';
+@import 'shared/components/components.images';
+@import 'custom/components/components.mobile-menu';
+@import 'custom/components/components.navbar';
+@import 'custom/components/components.social-media-icons';
+@import 'custom/components/components.post-meta';
+@import 'custom/components/components.type-setting';
+
+@import 'shared/utilities/utilities.text-alignment';
+@import 'shared/utilities/utilities.color';
+@import 'shared/utilities/utilities.media-queries';

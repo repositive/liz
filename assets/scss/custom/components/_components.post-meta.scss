@@ -1,0 +1,23 @@
+/* ==========================================================================
+   POST META STYLING
+   ========================================================================== */
+
+.c-post-meta__item {
+  padding: $global-spacing-unit-tiny $global-spacing-unit-small;
+
+  a,
+  i,
+  time {
+    @extend .u-text-light-grey;
+  }
+
+  i {
+    margin-right: $global-spacing-unit-tiny;
+  }
+}
+
+.c-post-meta__item:hover {
+  a {
+    @extend .u-text-mid-grey;
+  }
+}

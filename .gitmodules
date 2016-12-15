@@ -1,0 +1,3 @@
+[submodule "assets/scss/shared"]
+	path = assets/scss/shared
+	url = git@github.com:repositive/repositive-core-styles.git

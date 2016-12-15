@@ -1,0 +1,126 @@
+/* ==========================================================================
+    MOBILE-MENU
+   ========================================================================== */
+
+// Reset Styles for mobile nav
+/* ==================================== */
+
+.nav__menu-mobile {
+  background-color: $color-off-white;
+  padding: $global-spacing-unit-small;
+  text-align: center;
+}
+
+.nav__menu-mobile-item {
+  display: block;
+  margin-left: 0;
+  &.vert-pad {
+    padding: $global-spacing-unit-small 0;
+  }
+  &.border-bottom {
+    border-bottom: 1px solid $color-very-light-grey;
+  }
+}
+
+// Toggle Button - Basic Styles
+/* ==================================== */
+
+%hamburger-menu-span {
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: $color-mid-grey;
+  transition: $global-transition;
+}
+
+%hamburger-menu-span--open {
+  width: 20px;
+}
+
+// Toggle Button - Menu Hidden
+/* ==================================== */
+
+.nav__mobile-toggle-button {
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+
+  span {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    @extend %hamburger-menu-span;
+  }
+
+  span:nth-of-type(2) {
+    top: 17px;
+  }
+
+  span:nth-of-type(3) {
+    top: 24px;
+  }
+}
+
+// Toggle Button - Menu Displayed
+/* ==================================== */
+
+.slideout-open .nav__mobile-toggle-button {
+  span {
+    @extend %hamburger-menu-span--open;
+  }
+  span:nth-of-type(1) {
+    transform-origin: left center;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  span:nth-of-type(2) {
+    opacity: 0;
+  }
+  span:nth-of-type(3) {
+    transform-origin: left center;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+
+.slideout-panel {
+  box-shadow: -3px 0 5px rgba(0,0,0,0.1);
+}
+
+// Slideout Menu - Vendor Styles
+/* ==================================== */
+
+ .slideout-menu {
+   position: fixed;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   z-index: 0;
+   width: 256px;
+   overflow-y: auto;
+   -webkit-overflow-scrolling: touch;
+   display: none;
+ }
+
+ .slideout-panel {
+   position:relative;
+   z-index: 1;
+   will-change: transform;
+   background: #fff;
+ }
+
+ .slideout-open,
+ .slideout-open body,
+ .slideout-open .slideout-panel {
+   overflow: hidden;
+ }
+
+ .slideout-open .slideout-menu {
+   display: block;
+ }

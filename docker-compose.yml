@@ -1,0 +1,12 @@
+version: '2'
+services:
+  ghost:
+    image: ghost:0.7.9
+    volumes:
+      - .:/usr/src/ghost/content/themes/liz
+      - ./ghost-data/config.js:/var/lib/ghost/config.js
+    ports:
+      - 2368:2368
+      - 2369:2369
+    environment:
+      NODE_ENV: testing

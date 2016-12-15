@@ -1,21 +1,30 @@
-<div class="navbar-fixed">
-  <nav class="grey lighten-4">
-    <div class="nav-wrapper">
+<!--=======================================
+* needs to have fixed position on scroll-up
+============================================-->
 
-      {{#if @blog.logo}}
-        <a href="http://repositive.io">
-          <div class="nav-logo">
-            <img class="responsive-img" src="{{@blog.logo}}" alt="Repositive DNA logo">
-          </div>
-        </a>
-      {{else}}
-        <a href="http://repositive.io">
-          <div class="nav-logo">
-            {{@blog.title}}
-          </div>
-        </a>
-      {{/if}}
+<nav class="nav">
 
+  <a href="https://repositive.io" class="nav__logo">
+    <img src="{{asset 'images/logos/repositive/repositive-full.svg'}}" alt="Repositive DNA logo">
+  </a>
+
+  <ul class="nav__menu o-list-inline o-list-flush-left u-hide-on-sm-md">
+    <li class="o-list-inline__item"><a class="nav__menu-item" href="https://repositive.io/product">Product</a></li>
+    <li class="o-list-inline__item"><a class="nav__menu-item active" href="{{ @blog.url }}" onclick="_gaq.push(['_trackEvent', 'navbar', 'blog link', 'click']);">Blog</a></li>
+    <li class="o-list-inline__item"><a class="nav__menu-item " href="https://repositive.io/about/"  onclick="_gaq.push(['_trackEvent', 'navbar', 'about link', 'click']);">About</a></li>
+    <li class="o-list-inline__item"><a class="nav__menu-item u-text-teal border-left" href="https://discover.repositive.io/users/login">Login</a></li>
+    <li class="o-list-inline__item"><a class="nav__menu-item c-btn c-btn--primary u-text-white" href="https://discover.repositive.io/users/signup" onclick="_gaq.push(['_trackEvent', 'navbar', 'try it button navbar', 'click']);">Create Account</a></li>
+  </ul>
+
+  <div class="nav__mobile-toggle-button u-ta--center u-hide-on-lg">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</nav>
+
+<!--
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
       <ul class="right hide-on-small">
@@ -36,4 +45,4 @@
 
     </div>
   </nav>
-</div>
+</div> -->
