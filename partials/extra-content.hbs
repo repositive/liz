@@ -1,0 +1,53 @@
+
+
+<!-- TAGS -->
+<!-- {{#if tag.image}}
+  <header class="liz-header {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}no-cover{{/if}};">
+    <div role='banner' class="container main-container center-align"></div>
+  </header>
+{{/if}} -->
+
+<!-- if there is an image  -->
+<!-- display it -->
+<!--  else, hide the div -->
+
+  <header class="c-header-image">
+    Hello world
+  </header>
+
+
+
+
+<!--
+
+
+
+post
+{{#if image}}
+  <header class="liz-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}};"></header>
+{{/if}}
+
+
+
+{{#if @blog.cover}}
+  <header class="liz-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}};">
+    <div role='banner' class="container main-container center-align">
+      {{#if @blog.description}}
+        <h2 class="white-text intro-text vertical">
+          {{@blog.description}}
+        </h2>
+      {{/if}}
+    </div>
+  </header>
+{{/if}}
+
+
+AUTHOR
+{{#author}}
+
+    {{#if cover}}
+      <header class="liz-header {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}};">
+        <div role='banner' class="container main-container center-align">
+        </div>
+      </header>
+    {{/if}} -->

@@ -1,54 +1,31 @@
 {{!< default}}
 
-{{#if tag.image}}
-<header class="liz-header {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}no-cover{{/if}};">
-  <div role='banner' class="container main-container center-align">
-  </div>
-</header>
-{{/if}}
+{{> header}}
 
-<section class="author-profile inner">
-  <h1 class="author-title">{{tag.name}}</h1>
-  {{#if tag.description}}
-    <h2 class="author-bio tag-descr">{{tag.description}}</h2>
-  {{else}}
-    <h2 class="author-bio tag-descr">A {{pagination.total}}-post collection</h2>
-  {{/if}}
-</section>
+<div class="grid__wrap">
+  <div class="grid">
+    <div class="grid__col grid__col--3-of-3">
 
-<main class="main-container container" role="main">
-
-  {{#foreach posts}}
-
-    <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
-
-      <header class="post-header">
-        <h2 class="post-title" itemprop="headline"><a href="{{{url}}}" rel="bookmark">
-          {{title}}
-        </a></h2>
-
-        <section class="excerpt-liz">
-            <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
-        </section>
-
-        <section class="post-meta">
-          {{> post-meta}}
-        </section>
-
+      <header class="u-ta--center">
+        <h2 class="c-heading-section">{{ tag.name }}</h2>
+        {{#if tag.description}}
+          <h4 class="c-heading-sub u-text-weight-thin">{{tag.description}}</h4>
+        {{else}}
+          <h4 class="c-heading-sub u-text-weight-thin">A {{pagination.total}}-post collection</h4>
+        {{/if}}
+        <div class="o-sp--unit"></div>
       </header>
+      
+      {{> divider}}
 
+      {{#foreach posts}}
+        {{> article-excerpt}}
+      {{/foreach}}
 
-    </article>
+      {{#if pagination}}
+        {{> pagination-footer}}
+      {{/if}}
 
-    <div class="divider"></div>
-
-  {{/foreach}}
-
-
-  {{#if pagination}}
-    <div class="pagination-liz">
-      {{{pagination}}}
     </div>
-  {{/if}}
-
-</main>
+  </div>
+</div>

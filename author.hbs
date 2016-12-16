@@ -1,62 +1,19 @@
 {{!< default}}
-{{#author}}
-  {{#if cover}}
-    <header class="c-banner u-ta--left" style="background-image: url({{cover}})"></header>
-  {{/if}}
-{{/author}}
+
+{{> header}}
 
 <div class="grid__wrap">
   <div class="grid">
-    <div class="grid__col--3-of-3">
+    <div class="grid__col grid__col--3-of-3">
 
-      {{#author}}
-        <section class="u-ta--center">
-
-          {{#if image}}
-            <img src="{{image}}" alt="{{name}}'s Picture" class="c-img-circle c-img--120"/>
-            <div class="o-sp--small"></div>
-          {{/if}}
-
-          <h2 class="c-heading-section">{{name}}</h2>
-
-          {{#if bio}}
-            <h4 class="c-heading-sub u-text-weight-thin">{{bio}}</h4>
-          {{/if}}
-
-          <ul class="o-list-inline o-list-flush-left u-text-mid-grey">
-            {{#if location}}
-              <li class="o-list-inline__item">
-                <i class="fa fa-map-marker"></i>{{location}}
-              </li>
-            {{/if}}
-
-            {{#if website}}
-              <li class="o-list-inline__item">
-                <a href="{{website}}" class="u-text-mid-grey">{{website}}</a>
-              </li>
-            {{/if}}
-
-            <li class="o-list-inline__item">
-              <i class="fa fa-bar-chart"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
-            </li>
-          </ul>
-
-        </section>
-
-        <div class="o-sp--unit"></div>
-
-        {{> divider}}
-
-      {{/author}}
+      {{> author-header}}
 
       {{#foreach posts}}
-        {{>article-excerpt}}
+        {{> article-excerpt}}
       {{/foreach}}
 
       {{#if pagination}}
-        <div class="u-ta--center">
-          {{{ pagination }}}
-        </div>
+        {{> pagination-footer}}
       {{/if}}
 
     </div>
