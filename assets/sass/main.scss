@@ -13,20 +13,6 @@
 @import 'styles/post';
 @import 'styles/prism';
 
-//to use: @include border-radius(2px)
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
-}
-// mixin for styling a placeholder
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content};
-  &::-moz-placeholder {@content};
-  &::-moz-placeholder {@content};
-  &:-ms-input-placeholder {@content};
-}
 
 .liz-header {
   position: relative;
@@ -48,8 +34,4 @@
     box-shadow: none;
 
   }
-}
-
-.article-liz {
-  padding-bottom: 1em;
 }

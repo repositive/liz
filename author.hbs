@@ -1,58 +1,64 @@
 {{!< default}}
-
 {{#author}}
-
-    {{#if cover}}
-      <header class="liz-header {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}};">
-        <!-- <div role='banner' class="container main-container center-align">
-        </div> -->
-      </header>
-    {{/if}}
-
-    <section class="author-profile inner">
-        {{#if image}}
-          <figure class="author-image">
-              <div class="img" style="background-image: url({{image}})">
-          </figure>
-        {{/if}}
-        <h1 class="author-title">{{name}}</h1>
-        {{#if bio}}
-          <h2 class="author-bio">{{bio}}</h2>
-        {{/if}}
-        <div class="author-meta">
-          {{#if location}}<span class="author-location fa fa-map-marker"> {{location}}</span>{{/if}}
-          {{#if website}}<a href="{{website}}"><span class="author-link fa fa-link"> {{website}}</span></a>{{/if}}
-          <span class="author-stats"><i class="fa fa-bar-chart"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
-        </div>
-    </section>
+  {{#if cover}}
+    <header class="c-banner u-ta--left" style="background-image: url({{cover}})"></header>
+  {{/if}}
 {{/author}}
 
-<main class="main-container container" role="main">
+<div class="grid__wrap">
+  <div class="grid">
+    <div class="grid__col--3-of-3">
 
-  {{#foreach posts}}
-    <article class="article-liz" role="article" itemscope itemtype="http://schema.org/Article">
-      <header class="post-header">
-        <h2 class="post-title" itemprop="headline">
-          <a href="{{{url}}}" rel="bookmark">{{title}}</a>
-        </h2>
-        <section class="excerpt-liz">
-          <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
+      {{#author}}
+        <section class="u-ta--center">
+
+          {{#if image}}
+            <img src="{{image}}" alt="{{name}}'s Picture" class="c-img-circle c-img--120"/>
+            <div class="o-sp--small"></div>
+          {{/if}}
+
+          <h2 class="c-heading-section">{{name}}</h2>
+
+          {{#if bio}}
+            <h4 class="c-heading-sub u-text-weight-thin">{{bio}}</h4>
+          {{/if}}
+
+          <ul class="o-list-inline o-list-flush-left u-text-mid-grey">
+            {{#if location}}
+              <li class="o-list-inline__item">
+                <i class="fa fa-map-marker"></i>{{location}}
+              </li>
+            {{/if}}
+
+            {{#if website}}
+              <li class="o-list-inline__item">
+                <a href="{{website}}" class="u-text-mid-grey">{{website}}</a>
+              </li>
+            {{/if}}
+
+            <li class="o-list-inline__item">
+              <i class="fa fa-bar-chart"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+            </li>
+          </ul>
+
         </section>
-        <section class="post-meta">
-          {{> post-meta}}
-        </section>
-      </header>
-    </article>
 
-    <div class="divider"></div>
+        <div class="o-sp--unit"></div>
 
-  {{/foreach}}
+        {{> divider}}
 
+      {{/author}}
 
-  {{#if pagination}}
-    <div class="pagination-liz">
-      {{{pagination}}}
+      {{#foreach posts}}
+        {{>article-excerpt}}
+      {{/foreach}}
+
+      {{#if pagination}}
+        <div class="u-ta--center">
+          {{{ pagination }}}
+        </div>
+      {{/if}}
+
     </div>
-  {{/if}}
-
-</main>
+  </div>
+</div>

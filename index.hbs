@@ -12,28 +12,13 @@
     {{> divider }}
 
     {{#foreach posts}}
-      <article class="grid__col grid__col--3-of-3" role="article" itemscope itemtype="http://schema.org/Article">
 
-        <a href="{{{url}}}" rel="bookmark">
-          <h2 class="post-title c-heading-section u-text-dark-grey" itemprop="headline">
-            {{title}}
-          </h2>
-        </a>
-
-        <section class="excerpt-liz">
-          <p>{{excerpt words="45"}} <a class="read-more" href="{{url}}">...</a></p>
-        </section>
-
-        {{> post-meta}}
-        <div class="o-sp--unit"></div>
-      </article>
-
-      {{> divider}}
+      {{> article-excerpt }}
 
     {{/foreach}}
 
     {{#if pagination}}
-      <div class="pagination-liz">
+      <div class="u-ta--center">
         {{{pagination}}}
       </div>
     {{/if}}
