@@ -1,12 +1,49 @@
 {{!< default}}
 
-{{> header}}
-
 <div class="grid__wrap">
   <div class="grid">
     <div class="grid__col grid__col--3-of-3">
 
-      {{> author-header}}
+      {{#author}}
+        <header class="u-ta--center">
+
+          {{#if image}}
+            <img src="{{ image }}" alt="{{ name }}'s Picture" class="c-img-circle c-img--120"/>
+            <div class="o-sp--small"></div>
+          {{/if}}
+
+          <h2 class="c-heading-section">{{ name }}</h2>
+          {{#if bio}}
+              <h4 class="c-heading-sub u-text-weight-thin">{{ bio }}</h4>
+          {{/if}}
+
+          <div class="o-sp--unit"></div>
+
+          <section class="c-meta">
+            {{#if location}}
+                <span class="c-meta__item o-sp-right--small">
+                    <i class="fa fa-map-marker"></i>{{ location }}
+                </span>
+            {{/if}}
+
+            {{#if website}}
+                <span class="c-meta__item o-sp-right--small  ">
+                    <a href="{{ website }}" class="u-text-mid-grey">{{ website }}</a>
+                </span>
+            {{/if}}
+
+            <span class="c-meta__item o-sp-right--small">
+                <i class="fa fa-bar-chart"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+            </span>
+          </section>
+
+          <div class="o-sp--unit"></div>
+        </header>
+
+        {{> divider}}
+
+      {{/author}}
+
 
       {{#foreach posts}}
         {{> article-excerpt}}

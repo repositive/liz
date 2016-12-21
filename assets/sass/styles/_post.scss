@@ -14,19 +14,7 @@
   height: 30em;
 }
 
-.share {
-  display: block-inline;
-  text-align: left;
 
-  .row {
-    margin-top: 1rem;
-  }
-
-  a {
-    padding: 0 .3em;
-    float: right;
-  }
-}
 
 .post-meta {
   color: $unfocus-grey !important;
@@ -51,11 +39,5 @@
     &:hover {
       text-decoration: underline;
     }
-  }
-}
-
-.disqus {
-  h4 {
-    text-align: left;
   }
 }

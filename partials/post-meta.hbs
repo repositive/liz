@@ -1,5 +1,6 @@
-<section class="c-post-meta">
-  <span class="c-post-meta__item">
+<section class="c-meta c-meta__dividers c-body-small">
+
+  <span class="c-meta__item">
     {{#author}}
       <a href="{{ url }}" class="u-text-light-grey">
         {{#if image}}
@@ -13,11 +14,11 @@
     {{/author}}
   </span>
 
-  <span class="c-post-meta__item">
+  <span class="c-meta__item">
     <i class="fa fa-calendar"></i><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"> {{date format="DD MMMM YYYY"}}</time>
   </span>
 
-  <span class="c-post-meta__item">
+  <span class="c-meta__item">
     {{#if tags}}
       <i class="fa fa-tag"></i>
 

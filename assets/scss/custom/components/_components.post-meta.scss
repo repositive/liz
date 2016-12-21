@@ -2,22 +2,34 @@
    POST META STYLING
    ========================================================================== */
 
-.c-post-meta__item {
-  padding: $global-spacing-unit-tiny $global-spacing-unit-small;
-
-  a,
+.c-meta {
+  time,
   i,
-  time {
+  a,
+  span {
     @extend .u-text-light-grey;
   }
 
+  img,
   i {
-    margin-right: $global-spacing-unit-tiny;
+    @extend .o-sp-right--tiny;
   }
 }
 
-.c-post-meta__item:hover {
-  a {
-    @extend .u-text-mid-grey;
+.c-meta__item:hover a {
+  @extend .u-text-mid-grey;
+}
+
+.c-meta__dividers {
+  .c-meta__item:after {
+    content: '|';
+    padding: 0 $global-spacing-unit-tiny;
   }
+  .c-meta__item:last-of-type:after {
+    content: '';
+  }
+}
+
+.c-meta__tag-nav .c-meta__item {
+  padding: $global-spacing-unit-tiny;
 }
