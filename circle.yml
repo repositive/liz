@@ -1,10 +1,6 @@
 machine:
   pre:
     - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
-    - curl -sSL https://github.com/rancher/cli/releases/download/v0.1.0-rc3/rancher-linux-amd64-v0.1.0-rc3.tar.gz > rancher.tar.gz
-    - tar xf rancher.tar.gz && sudo mv rancher-v0.1.0-rc3/rancher /usr/bin/rancher
-    - curl -sSL https://github.com/rancher/rancher-compose/releases/download/v0.9.3-rc1/rancher-compose-linux-amd64-v0.9.3-rc1.tar.gz > rancher-compose.tar.gz
-    - tar -xf rancher-compose.tar.gz && sudo mv rancher-compose-v0.9.3-rc1/rancher-compose /usr/bin/rancher-compose
   node:
     version: 6.4.0
   services:
@@ -20,13 +16,10 @@ deployment:
     branch: master
     commands:
       - node node_modules/gulp/bin/gulp.js styles
-      - docker build -t registry.repositive.io:5000/ghost .
+      - docker build -t registry.repositive.io:5000/ghost:$CIRCLE_BUILD_NUM .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS registry.repositive.io:5000
-      - docker push registry.repositive.io:5000/ghost
-      - mkdir rancher && cd rancher
-      - rancher --env 1a7 --access-key $ACCESS_STA --secret-key $SECRET_STA export blog > compose.tar
-      - tar -xf compose.tar
-      - rancher-compose --access-key $ACCESS_STA --secret-key $SECRET_STA -p blog up --force-upgrade -c -d ghost
+      - docker push registry.repositive.io:5000/ghost:$CIRCLE_BUILD_NUM
+      - curl -u $DEPLOYMENT_USER:$DEPLOYMENT_PASS -T "deploy.staging.yml" "https://deployment-staging.repositive.io/deploy?stack=systems&version=$CIRCLE_BUILD_NUM"
 
   release:
     tag: /release-.*/
@@ -35,3 +28,4 @@ deployment:
       - docker build -t registry.repositive.io:5000/ghost:$CIRCLE_TAG .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS registry.repositive.io:5000
       - docker push registry.repositive.io:5000/ghost:$CIRCLE_TAG
+      - curl -u $DEPLOYMENT_USER:$DEPLOYMENT_PASS -T "deploy.production.yml" "https://deployment.repositive.io/deploy?stack=sys&version=$CIRCLE_TAG"
