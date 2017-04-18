@@ -1,0 +1,38 @@
+version: '3'
+services:
+  blog:
+    image: registry.repositive.io:5000/ghost:${TAG}
+    networks:
+      - traefik
+    volumes:
+      - /mnt/blog/config.js:/var/lib/ghost/config.js
+      - /mnt/blog/images:/var/lib/ghost/images
+    deploy:
+      labels:
+        - "traefik.backend=blog"
+        - "traefik.frontend.rule=Host:blog.repositive.io"
+        - "traefik.port=2368"
+      replicas: 1
+      resources:
+        limit:
+          memory: 200M
+          cpus: '0.3'
+        reservations:
+          memory: 100M
+          cpus: '0.1'
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        window: 30s
+      placement:
+        constraints:
+          - node.labels.blog==true
+          - node.labels.db==true
+
+networks:
+  traefik:
+    external:
+      name: sys_traefik
