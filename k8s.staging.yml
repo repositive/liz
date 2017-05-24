@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog
+  labels:
+    app: blog
+spec:
+  selector:
+    app: blog
+  ports:
+    - port: 80
+      targetPort: 2368
+      name: http
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: blog
+  labels:
+    app: blog
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      volumes:
+        - name: blog-data-staging
+          awsElasticBlockStore:
+            volumeID: vol-05f3c20a213fa2e54
+            partition: 1
+            fsType: ext4
+      containers:
+        - name: blog
+          image: registry.repositive.io:5000/ghost:${TAG}
+          volumeMounts:
+            - mountPath: /var/lib/ghost
+              name: blog-data-staging
+          resources:
+            limits:
+              cpu: 300m
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 2368
+      imagePullSecrets:
+        - name: regsecret
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: blog
+  labels:
+    app: blog
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  rules:
+  - host: blog-ks.repositive.io
+    http:
+      paths:
+      - backend:
+          serviceName: blog
+          servicePort: 80
