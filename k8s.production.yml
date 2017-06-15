@@ -34,7 +34,7 @@ spec:
       volumes:
         - name: blog-data-production
           awsElasticBlockStore:
-            volumeID: vol-XXXXXXXXX
+            volumeID: vol-0ce9108c5d285ffc2
             partition: 1
             fsType: ext4
       containers:
