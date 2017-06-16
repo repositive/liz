@@ -20,22 +20,14 @@ metadata:
     app: blog
     env: production
     criticality: high
-    build: "${TAG}"
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: blog
-      env: production
-      criticality: high
-      build: "${TAG}"
   template:
     metadata:
       labels:
         app: blog
         env: production
         criticality: high
-        build: "${TAG}"
     spec:
       volumes:
         - name: blog-data-production

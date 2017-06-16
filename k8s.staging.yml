@@ -20,27 +20,19 @@ metadata:
     app: blog
     env: staging
     criticality: high
-    build: "${TAG}"
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: blog
-      env: staging
-      criticality: high
-      build: "${TAG}"
   template:
     metadata:
       labels:
         app: blog
         env: staging
         criticality: high
-        build: "${TAG}"
     spec:
       volumes:
         - name: blog-data-staging
           awsElasticBlockStore:
-            volumeID: vol-05f3c20a213fa2e54
+            volumeID: vol-0dc15a49bceefa0c5
             partition: 1
             fsType: ext4
       containers:
