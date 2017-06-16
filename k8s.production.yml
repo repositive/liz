@@ -18,7 +18,7 @@ metadata:
   name: blog
   labels:
     app: blog
-    env: staging
+    env: production
     criticality: high
     build: "${TAG}"
 spec:
@@ -26,21 +26,21 @@ spec:
   selector:
     matchLabels:
       app: blog
-      env: staging
+      env: production
       criticality: high
       build: "${TAG}"
   template:
     metadata:
       labels:
         app: blog
-        env: staging
+        env: production
         criticality: high
         build: "${TAG}"
     spec:
       volumes:
-        - name: blog-data-staging
+        - name: blog-data-production
           awsElasticBlockStore:
-            volumeID: vol-05f3c20a213fa2e54
+            volumeID: vol-0ce9108c5d285ffc2
             partition: 1
             fsType: ext4
       containers:
@@ -48,7 +48,7 @@ spec:
           image: registry.repositive.io:5000/ghost:${TAG}
           volumeMounts:
             - mountPath: /var/lib/ghost
-              name: blog-data-staging
+              name: blog-data-production
           resources:
             limits:
               cpu: 300m
@@ -71,7 +71,7 @@ metadata:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-  - host: blog-staging.repositive.io
+  - host: blog.repositive.io
     http:
       paths:
       - backend:
